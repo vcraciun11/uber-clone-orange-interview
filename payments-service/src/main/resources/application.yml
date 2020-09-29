@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: payments
+  datasource:
+    url: jdbc:postgresql://database:5432/uberish_db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      default_schema: payments_schema
+  flyway:
+    baseline-on-migrate: true
+    default-schema: payments_schema
+    schemas: payments_schema
+    url: jdbc:postgresql://database:5432/uberish_db
+    password: postgres
+
+server:
+  servlet:
+    context-path: api/v1
+
+payments:
+  client:
+    trips-service:
+      crnk:
+        url: ${payments.client.trips-service.crnk.baseUrl}:${payments.client.trips-service.crnk.port}/${payments.client.trips-service.crnk.contextPath}
+        baseUrl: http://payments
+        port: 8080
+        contextPath: api/v1
+

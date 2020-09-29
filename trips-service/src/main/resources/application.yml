@@ -1,0 +1,31 @@
+spring:
+  valida
+  application:
+    name: trips
+  datasource:
+    url: jdbc:postgresql://database:5432/uberish_db
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        default_schema: trips_schema
+  flyway:
+    baseline-on-migrate: true
+    default-schema: trips_schema
+    schemas: trips_schema
+    url: jdbc:postgresql://database:5432/uberish_db
+    password: postgres
+
+server:
+  servlet:
+    context-path: /api/v1
+
+trips:
+  client:
+    payments-service:
+      url: ${trips.client.payments-service.baseUrl}:${trips.client.payments-service.port}/${trips.client.payments-service.contextPath}/${trips.client.payments-service.resourcePath}
+      baseUrl: http://payments
+      port: 8080
+      contextPath: api/v1
+      resourcePath: payments

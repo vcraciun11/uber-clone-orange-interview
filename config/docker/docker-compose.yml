@@ -1,0 +1,43 @@
+version: '3'
+services:
+  database:
+    image: db-service:0.0.1
+    ports:
+      - 5432:5432
+    env_file:
+      - database.env
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+    container_name: postgres-db
+  users:
+    image: users-service:0.0.1
+    ports:
+      - 9000:8080
+      - 5006:5005
+    depends_on:
+      - "database"
+    container_name: users-service
+  trips:
+    image: trips-service:0.0.1
+    ports:
+      - 9001:8080
+    depends_on:
+      - "database"
+    container_name: trips-service
+  payments:
+    image: payments-service:0.0.1
+    ports:
+      - 9002:8080
+    depends_on:
+      - "database"
+    container_name: payments-service
+  cars:
+    image: cars-service:0.0.1
+    ports:
+      - 9003:8080
+    depends_on:
+      - "database"
+    container_name: cars-service
+
+volumes:
+  database-data:

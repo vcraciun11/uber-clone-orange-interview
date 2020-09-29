@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "54d200de-3ed7-461f-b574-8d901f7685cd",
+		"name": "Uber",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/users/de86b16a-4718-4863-9e02-a1a6602ad970",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"de86b16a-4718-4863-9e02-a1a6602ad970"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllCarsByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/users/5ab89501-2d0c-49d5-8346-42b9cd567fd8/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"5ab89501-2d0c-49d5-8346-42b9cd567fd8",
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllTripsByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/users/5ab89501-2d0c-49d5-8346-42b9cd567fd8/trips",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"5ab89501-2d0c-49d5-8346-42b9cd567fd8",
+								"trips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Pavel\",\r\n    \"lastName\": \"Pavalescu\",\r\n    \"phoneNumber\": \"+37368200000\"\r\n  }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Car for user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"Toyota Prius\",\r\n        \"color\": \"Silver\",\r\n        \"registrationNumber\": \"AAA 153\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/users/5ab89501-2d0c-49d5-8346-42b9cd567fd8/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"5ab89501-2d0c-49d5-8346-42b9cd567fd8",
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Pavel\",\r\n    \"lastName\": \"Pavalescu\",\r\n    \"phoneNumber\": \"+37368500000\"\r\n  }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/de86b16a-4718-4863-9e02-a1a6602ad970",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"de86b16a-4718-4863-9e02-a1a6602ad970"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9000/api/v1/users/007dfe6b-374e-4464-a603-02a7ca760ccd",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/users/007dfe6b-374e-4464-a603-02a7ca760ccd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"007dfe6b-374e-4464-a603-02a7ca760ccd"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "car",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/api/v1/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"api",
+								"v1",
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/api/v1/cars/11c15be3-98a2-4d71-8e4e-e50094f68fc1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								"11c15be3-98a2-4d71-8e4e-e50094f68fc1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": {\r\n    \"type\": \"cars\",\r\n    \"attributes\": {\r\n                \"name\": \"Dacia Logan\",\r\n                \"color\": \"Grey\",\r\n                \"registrationNumber\": \"AAA 888\",\r\n                \"driverId\": \"65cd4446-90c6-46ee-9a9b-c54d3058160b\"\r\n            }\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9003/api/v1/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"api",
+								"v1",
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9003/api/v1/cars/11c15be3-98a2-4d71-8e4e-e50094f68fc1",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": {\r\n    \"type\": \"cars\",\r\n    \"attributes\": {\r\n                \"color\": \"Silver\"\r\n            }\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9003/api/v1/cars/11c15be3-98a2-4d71-8e4e-e50094f68fc1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								"11c15be3-98a2-4d71-8e4e-e50094f68fc1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9003/api/v1/cars/11c15be3-98a2-4d71-8e4e-e50094f68fc1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/api/v1/cars/11c15be3-98a2-4d71-8e4e-e50094f68fc1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								"11c15be3-98a2-4d71-8e4e-e50094f68fc1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "trips",
+			"item": [
+				{
+					"name": "http://localhost:9001/api/v1/trips",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/api/v1/trips",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"api",
+								"v1",
+								"trips"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

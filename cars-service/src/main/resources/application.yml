@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: cars
+  datasource:
+    url: jdbc:postgresql://database:5432/uberish_db
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        default_schema: cars_schema
+  flyway:
+    baseline-on-migrate: true
+    default-schema: cars_schema
+    schemas: cars_schema
+    url: jdbc:postgresql://database:5432/uberish_db
+    password: postgres
+
+server:
+  servlet:
+    context-path: /api/v1

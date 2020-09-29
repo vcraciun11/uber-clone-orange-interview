@@ -1,0 +1,3 @@
+#Deploying all services...
+echo "Deploying services..."
+docker-compose -f docker/docker-compose.yml up -d
